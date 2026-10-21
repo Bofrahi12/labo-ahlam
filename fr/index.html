@@ -517,7 +517,7 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
     <nav class="chaps">
       <a href="#services" data-i="nav1">Services</a>
 <a href="#stars">Célébrités</a>
-<a href="#galerie" data-i="nav2">Galerie</a><a href="#process" data-i="nav3">Comment nous travaillons</a><a href="#reels" data-i="nav4">D'Instagram</a><a href="#faq" data-i="nav5">Questions</a><a href="#rdv" data-i="nav6">Réservation</a>
+<a href="#process" data-i="nav3">Comment nous travaillons</a><a href="#reels" data-i="nav4">D'Instagram</a><a href="#faq" data-i="nav5">Questions</a><a href="#rdv" data-i="nav6">Réservation</a>
     </nav>
     <button id="burger" type="button" aria-label="Menu">☰</button><div class="lang-sw"><a href="../index.html">عربي</a><a class="on" href="index.html">FR</a><a href="../en/index.html">EN</a></div><style>.lang-sw{display:inline-flex;gap:6px;align-items:center}.lang-sw a{border:1px solid #3d6a96;color:#a9c6de;border-radius:999px;padding:7px 13px;font-weight:800;font-size:13px;text-decoration:none}.lang-sw a.on{background:#2f80ed;color:#fff;border-color:#2f80ed}</style>
     <a class="btn btn-wa" href="https://wa.me/212609238630?text=Bonjour%2C%20je%20souhaite%20me%20renseigner%20sur%20les%20proth%C3%A8ses%20dentaires" target="_blank" rel="noopener">WhatsApp</a>
@@ -626,18 +626,7 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
   </div>
 </section>
 
-<section id="galerie">
-  <div class="wrap">
-    <div class="eyebrow">Galerie 3D · Du laboratoire</div>
-    <h2 class="title rv" data-i="galT">Le service… en images 3D</h2>
-<p class="lede rv">Des photos réelles de l'atelier et de nos productions — sans filtres ni images d'archives.</p>
-    <p class="gal-hint rv">Faites défiler les photos sur le côté, saisissez celle du centre et tournez-la avec votre doigt — comme si vous touchiez la prothèse de votre main.</p>
-  </div>
-  <div id="gal3d"><div class="gal-track" id="galTrack">
-    <figure class="gcard"><img src="../labo/gal-bench.jpg" alt="Le plan de travail au laboratoire Labo Ahlam" loading="lazy"><div class="glare"></div><figcaption>Du laboratoire — le plan de travail</figcaption></figure>
-    <figure class="gcard"><img src="../labo/gal-dentures.jpg" alt="Prothèses dentaires terminées, fabriquées par le laboratoire Labo Ahlam" loading="lazy"><div class="glare"></div><figcaption>Prothèses terminées — fabriquées au laboratoire</figcaption></figure>
-  </div></div>
-</section>
+
 
 
 <section id="avant-apres">
@@ -802,30 +791,6 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
     scene.addEventListener('pointermove',function(e){var r=tilt.getBoundingClientRect();move(e.clientX-r.left,e.clientY-r.top,r);});
     scene.addEventListener('pointerleave',function(){tilt.style.transform='rotateX(0) rotateY(0)';});
   }
-  /* 3D GALLERY coverflow + center drag tilt (Bacha V3 pattern) */
-  var track=document.getElementById('galTrack'),cards=[].slice.call(track.children);
-  function galUpdate(){
-    var tr=track.getBoundingClientRect(),mid=tr.left+tr.width/2;
-    cards.forEach(function(c){
-      var r=c.getBoundingClientRect(),cx=r.left+r.width/2,d=(cx-mid)/(tr.width/2),ad=Math.min(Math.abs(d),1);
-      var isC=Math.abs(d)<0.28;c.classList.toggle('is-center',isC);
-      if(c.dataset.grabbed==='1')return;
-      c.style.transform='rotateY('+(d*-22)+'deg) scale('+(1-ad*0.10)+')';
-      c.style.opacity=String(1-ad*0.35);
-      c.style.touchAction=isC?'none':'';
-    });
-  }
-  track.addEventListener('scroll',function(){requestAnimationFrame(galUpdate);},{passive:true});
-  window.addEventListener('resize',galUpdate);galUpdate();
-  cards.forEach(function(c){
-    var sx=0,sy=0,drag=false,moved=false;
-    c.addEventListener('pointerdown',function(e){if(!c.classList.contains('is-center'))return;sx=e.clientX;sy=e.clientY;drag=true;moved=false;c.dataset.grabbed='1';c.setPointerCapture(e.pointerId);});
-    c.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-sx,dy=e.clientY-sy;if(Math.abs(dx)+Math.abs(dy)>6)moved=true;var ry=Math.max(-34,Math.min(34,dx/6)),rx=Math.max(-24,Math.min(24,-dy/6));c.style.transform='rotateX('+rx+'deg) rotateY('+ry+'deg) scale(1.02)';c.style.setProperty('--gx',(50+dx/4)+'%');c.style.setProperty('--gy',(50+dy/4)+'%');});
-    function end(e){if(!drag)return;drag=false;delete c.dataset.grabbed;c.style.transform='';galUpdate();if(moved){var kill=function(ev){ev.stopPropagation();ev.preventDefault();c.removeEventListener('click',kill,true);};c.addEventListener('click',kill,true);setTimeout(function(){c.removeEventListener('click',kill,true);},350);}}
-    c.addEventListener('pointerup',end);c.addEventListener('pointercancel',end);
-    c.addEventListener('click',function(){if(!c.classList.contains('is-center')){c.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});}});
-    c.addEventListener('contextmenu',function(e){e.preventDefault();});
-  });
   /* FAQ */
   document.querySelectorAll('.faq-it button').forEach(function(b){b.addEventListener('click',function(){var it=b.parentElement,was=it.classList.contains('open');document.querySelectorAll('.faq-it.open').forEach(function(o){o.classList.remove('open');o.querySelector('.pl').textContent='+';});if(!was){it.classList.add('open');b.querySelector('.pl').textContent='−';}});});
 })();
