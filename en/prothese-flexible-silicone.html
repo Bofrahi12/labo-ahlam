@@ -138,6 +138,17 @@ footer a{color:var(--pink);text-decoration:none}
  ]
 }
 </script>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-92ESZF2EQ2"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());gtag('config','G-92ESZF2EQ2');
+document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
+ if(h.indexOf('wa.me')>-1){gtag('event','whatsapp_click',{page_path:location.pathname,link_text:(a.textContent||'').trim().slice(0,60)});}
+ else if(h.indexOf('tel:')===0){gtag('event','call_click',{page_path:location.pathname});}
+ else if(h.indexOf('maps.app.goo.gl')>-1){gtag('event','directions_click',{page_path:location.pathname});}});
+document.addEventListener('DOMContentLoaded',function(){var f=document.getElementById('labForm');if(f){f.addEventListener('submit',function(){gtag('event','case_submit',{page_path:location.pathname});});}});
+</script>
 </head>
 <body>
 <header><div class="wrap">

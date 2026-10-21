@@ -134,7 +134,18 @@ footer a{color:var(--pink);text-decoration:none}
 <style>.logo-mark{width:30px;height:30px;border-radius:9px;vertical-align:-8px;object-fit:cover}.logo-off{display:block;width:190px;max-width:60vw;border-radius:14px;margin:16px auto 0;border:1px solid rgba(255,255,255,.18)}</style>
 <link rel="icon" type="image/png" href="labo/favicon.png">
 <style>.svc-hero-art{display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 120% at 30% 20%,#123a5f,#081c30);border-radius:18px;min-height:240px;margin:18px 0}.svc-hero-art svg{filter:drop-shadow(0 14px 30px rgba(47,128,237,.45))}</style>
-<link rel="alternate" hreflang="ar" href="https://laboahlam.com/snap-on-smile.html"><link rel="alternate" hreflang="fr" href="https://laboahlam.com/fr/snap-on-smile.html"><link rel="alternate" hreflang="en" href="https://laboahlam.com/en/snap-on-smile.html"><link rel="alternate" hreflang="x-default" href="https://laboahlam.com/snap-on-smile.html"></head>
+<link rel="alternate" hreflang="ar" href="https://laboahlam.com/snap-on-smile.html"><link rel="alternate" hreflang="fr" href="https://laboahlam.com/fr/snap-on-smile.html"><link rel="alternate" hreflang="en" href="https://laboahlam.com/en/snap-on-smile.html"><link rel="alternate" hreflang="x-default" href="https://laboahlam.com/snap-on-smile.html"><!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-92ESZF2EQ2"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());gtag('config','G-92ESZF2EQ2');
+document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
+ if(h.indexOf('wa.me')>-1){gtag('event','whatsapp_click',{page_path:location.pathname,link_text:(a.textContent||'').trim().slice(0,60)});}
+ else if(h.indexOf('tel:')===0){gtag('event','call_click',{page_path:location.pathname});}
+ else if(h.indexOf('maps.app.goo.gl')>-1){gtag('event','directions_click',{page_path:location.pathname});}});
+document.addEventListener('DOMContentLoaded',function(){var f=document.getElementById('labForm');if(f){f.addEventListener('submit',function(){gtag('event','case_submit',{page_path:location.pathname});});}});
+</script>
+</head>
 <body>
 <header><div class="wrap">
 <a class="logo" href="index.html">Labo <span>Ahlam</span></a>
