@@ -28,14 +28,14 @@
 <meta property="og:image" content="https://laboahlam.com/labo/brand-poster.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#061626">
-<script>document.documentElement.classList.add('js');</script>
+<script>document.documentElement.classList.add('js');document.documentElement.classList.add('wf');function __wfDone(){document.documentElement.classList.remove('wf')}setTimeout(__wfDone,2500);</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="labo/celeb-before.jpg" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/marcellus/v14/wEO_EBrOk8hQLDvIAF81VvoK_kgXiQ.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cairo/v31/SLXVc1nY6HkvangtZmpQdkhzfH5lkSscRiyS8p4_RA.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cairo/v31/SLXVc1nY6HkvangtZmpQdkhzfH5lkSscQyyS8p4_RHH1.woff2">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Marcellus&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Marcellus&display=swap" rel="stylesheet" media="print" onload="this.media='all';if(document.fonts&&document.fonts.ready)document.fonts.ready.then(__wfDone);">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Marcellus&display=swap" rel="stylesheet"></noscript>
 <text y='.9em' font-size='90'>🦷</text></svg>">
 <style>
@@ -47,6 +47,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--txt);font-family:'Cairo','Segoe UI',Tahoma,sans-serif;overflow-x:hidden}
+.wf .hero-txt{visibility:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--vio);color:#fff}
